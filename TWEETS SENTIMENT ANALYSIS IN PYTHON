@@ -1,0 +1,32 @@
+def polarity (polar): if polar > 0: 
+
+return ("positive")
+
+elif polar <0:
+
+return ("negative")
+
+else:
+
+return ("neutral")
+
+def main(sc,filename):
+
+mydataori = (sc.textFile(filename) .map(lambda x:x.split(",")) [split every column by ,] .filter(lambda x :len(x) ==10) [take the one who has 10 , ] .filter(lambda x :len(x[1])>0) )
+
+mydata = (sc.textFile(filename)
+
+.map(lambda x:x.split(","))
+
+.filter(lambda x :len(x) ==10) .filter(lambda x :len(x[1])>0) #remove white space 
+
+.map(lambda x: remove_features(x))
+
+.map(lambda x: x.lower())
+
+.map (lambda x :abb_en (x)) .map(lambda x :TextBlob(x).sentiment.polarity) [will get number as the result] .map(lambda x :polarity(x))) 
+
+#print(mydatapolarity.take(5)) [*we always test part by part to know which part we did wrong] data_output = mydataori.zip(mydata) 
+data_output.saveAsTextFile("SPARK")
+
+#print(data_output.take(5))
