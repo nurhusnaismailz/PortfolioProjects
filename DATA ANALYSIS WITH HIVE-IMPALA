@@ -1,0 +1,9 @@
+from wordcloud import WordCloud , STOPWORDS
+import matplotlib.pyplot as plt
+
+wordcloud = WordCloud stopwords =STOPWORDS, background_color ='white ',
+width=1200 , height=1000).generate(<insert the single string
+
+plt.imshow(wordcloud)
+plt.axis("off")
+plt.show()
