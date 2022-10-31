@@ -1,0 +1,4 @@
+[root@cloudera Downloads]# hdfs dfs -ls /user/root/SPARK [find the file created]
+Found 2 items
+-rw-r--r-- 3 root supergroup 0 2019-09-29 16:49 /user/root/SPARK/_SUCCESS
+-rw-r--r-- 3 root supergroup 383553 2019-09-29 16:49 /user/root/SPARK/part-00000 [root@cloudera Downloads]# hdfs dfs -get /user/root/SPARK/part-00000 /root/ipython/spark [get it from user root to where local drive(we put it in the same jupyter)]
