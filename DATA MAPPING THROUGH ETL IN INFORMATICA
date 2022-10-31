@@ -1,0 +1,7 @@
+The Target transformation uses a flat file connection that writes to the following directory: C:\UserAccountData. The default All Fields rule includes all incoming fields. You create a Named Field rule to exclude the unnecessary user preferences fields.
+
+When you select Create New Target at Runtime, you enter the following name for the target file: SF_UserAccount_%d%m%y.csv.
+
+The mapping task creates a target file named SF_UserAccount_291116.csv in the C:\UserAccountData directory when the task runs on 1st Jan 2022. 
+
+The target file includes all fields from the Salesforce Account and User objects except for the user preferences fields specified in the Named Fields rule.
